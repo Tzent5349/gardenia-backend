@@ -11,13 +11,13 @@ export async function GET (){
 
 }
 
-export async function getProductByTypes (req:any) {
+/* export async function getProductByTypes (req:any) { */
 /*     const type = req.params.type; */
-    const query = req.query;
-    let products;
+/*     const query = req.query;
+    let products; */
 
 /*        await connectToDatabase() */
-       if (query.featured === "true"){
+/*        if (query.featured === "true"){
         products = await Product.find({
             featured: true,
           }).populate("reviews");
@@ -31,4 +31,4 @@ export async function getProductByTypes (req:any) {
     return products;
 
 }
-
+ */
