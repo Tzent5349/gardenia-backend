@@ -1,0 +1,47 @@
+[
+  {
+    "gender": "male",
+    "value": [
+      {
+        "Foot Length(mm)": "240",
+        "EU": "38",
+        "US": "6",
+        "UK": "5.5"
+      },
+      {
+        "Foot Length(mm)": "245",
+        "EU": "39",
+        "US": "6.5",
+        "UK": "6"
+      }
+    ]
+  },
+  {
+    "gender": "female",
+    "value": [
+      {
+        "Foot Length(mm)": "225",
+        "EU": "35",
+        "US": "4",
+        "UK": "3.5"
+      },
+      {
+        "Foot Length(mm)": "230",
+        "EU": "36",
+        "US": "5",
+        "UK": "4.5"
+      }
+    ]
+  },
+  {
+    "gender": "children",
+    "value": [
+      {
+        "Foot Length(mm)": "225",
+        "EU": "35",
+        "US": "4",
+        "UK": "3.5"
+      }
+    ]
+  }
+]

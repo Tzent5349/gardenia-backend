@@ -1,0 +1,17 @@
+[  {
+    "_id": "641d424bdbfab7b02ab28b95",
+    "img": "https://i.ibb.co/sVxYFDY/product-cat-1.png",
+    "parent": "Headphones",
+    "children": [
+      "Kids Headphones",
+      "Bluetooth Headphones",
+      "On-Ear Headphones"
+    ],
+    "productType": "electronics",
+    "products": [
+      "641e887d05f9ee1717e1348a",
+      "641e887d05f9ee1717e1348f",
+      "641e887d05f9ee1717e13496"
+    ],
+    "status": "Show"
+  }]
