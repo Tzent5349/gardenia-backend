@@ -1,5 +1,5 @@
 import  connectToDatabase  from "@/lib/database";
-import { getBrandById } from "@/lib/database/actions/brands.action";
+import { getUserById } from "@/lib/database/actions/users.action";
 import { NextResponse } from "next/server";
 
 export async function GET(
@@ -8,11 +8,11 @@ export async function GET(
 ){
     try {
         if (!params.id) {
-            return new NextResponse("Brand id is required", { status: 400 });
-          }
+            return new NextResponse("User id is required", { status: 400 });
+        }
         await connectToDatabase();
-        const brand = await getBrandById(params.id);
-        return new NextResponse(JSON.stringify(brand),{
+        const user = await getUserById(params.id);
+        return new NextResponse(JSON.stringify(user), {
             status: 200,
             headers: {
                 "Content-Type": "application/json",

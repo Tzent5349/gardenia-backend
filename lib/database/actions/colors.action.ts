@@ -2,7 +2,7 @@
 
 import { CreateColorParams, DeleteColorParams, UpdateColorParams } from "@/types"
 import { handleError } from "@/lib/utils"
-import { connectToDatabase } from "@/lib/database"
+import  connectToDatabase  from "@/lib/database"
 import Color from "@/lib/database/models/color.model"
 import { revalidatePath } from "next/cache"
 

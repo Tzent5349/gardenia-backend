@@ -1,4 +1,4 @@
-import { connectToDatabase } from "@/lib/database";
+import  connectToDatabase  from "@/lib/database";
 import { getProductById, getSimilarProduct } from "@/lib/database/actions/products.action";
 import { handleError } from "@/lib/utils";
 import { NextResponse } from "next/server";
@@ -25,6 +25,7 @@ export async function GET(
     req: Request,
     { params }: { params: { id: string } }
 ){
+    /* console.log(params.id) */
     try {
         if (!params.id) {
             return new NextResponse("Product id is required", { status: 400 });

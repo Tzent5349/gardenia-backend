@@ -1,4 +1,4 @@
-import { connectToDatabase } from "@/lib/database";
+import  connectToDatabase  from "@/lib/database";
 import { getAllCategory, getShowCategoryServices} from "@/lib/database/actions/categories.action";
 import { NextResponse } from "next/server";
 

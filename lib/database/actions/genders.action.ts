@@ -2,7 +2,7 @@
 
 import {createGenderParams, updateGenderPraams, deleteGenderParams} from "@/types";
 import { handleError } from "@/lib/utils";
-import { connectToDatabase } from "@/lib/database";
+import  connectToDatabase  from "@/lib/database";
 import Gender from "@/lib/database/models/gender.model";
 import { revalidatePath } from "next/cache";
 

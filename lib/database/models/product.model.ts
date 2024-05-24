@@ -141,7 +141,7 @@ const productSchema = new Schema({
         },
         default: "in-stock",
     },
-    reviews: [{ type: Schema.Types.ObjectId, ref: "Reviews" }],
+    reviews: [{ type: Schema.Types.ObjectId, ref: "reviews" }],
     productType: {
         type: String,
         required: true,

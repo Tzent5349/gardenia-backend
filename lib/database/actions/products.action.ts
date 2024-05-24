@@ -2,7 +2,7 @@
 
 import { createProductParams, updateProductParams, deleteProductParams } from "@/types";
 import { handleError } from "@/lib/utils";
-import { connectToDatabase } from "@/lib/database";
+import  connectToDatabase  from "@/lib/database";
 import Product from "@/lib/database/models/product.model";
 import { revalidatePath } from "next/cache";
 import Category from "../models/category.model";

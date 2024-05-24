@@ -1,4 +1,4 @@
-import { connectToDatabase } from "@/lib/database";
+import  connectToDatabase  from "@/lib/database";
 import { getAllProducts, getSimilarProduct } from "@/lib/database/actions/products.action";
 import Product from "@/lib/database/models/product.model";
 import { handleError } from "@/lib/utils";

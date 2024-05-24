@@ -198,3 +198,27 @@ export type updateUserParams = {
         userName: string;
     }
 }
+
+
+export type createReviewParams = {
+    review:{
+        userId:string;
+        productId:string;
+        rating:number;
+        comment:string;
+    }
+}
+
+export type updateReviewParams = {
+    review:{
+        _id:string
+        userId:string;
+        productId:string;
+        rating:number;
+        comment:string;
+    }
+}
+
+export type removeReviewParams = {
+    reviewId:string;
+}

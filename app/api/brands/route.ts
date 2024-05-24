@@ -1,4 +1,4 @@
-import { connectToDatabase } from "@/lib/database";
+import  connectToDatabase  from "@/lib/database";
 import { getAllBrand } from "@/lib/database/actions/brands.action";
 import { NextResponse } from "next/server";
 
