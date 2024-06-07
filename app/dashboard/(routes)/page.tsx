@@ -1,4 +1,4 @@
-import { CreditCard, DollarSign, Package } from "lucide-react";
+import { CreditCard, DollarSign, Euro, Package } from "lucide-react";
 
 import { Separator } from "@/components/ui/separator";
 import { Overview } from "@/components/shared/overview";
@@ -12,10 +12,13 @@ import { formatter } from "@/lib/utils";
 
 
 const DashboardPage= async () => {
-/*   const totalRevenue = await getTotalRevenue(params.storeId);
-  const graphRevenue = await getGraphRevenue(params.storeId);
-  const salesCount = await getSalesCount(params.storeId);
-  const stockCount = await getStockCount(params.storeId); */
+
+/*   const graphRevenue = await getGraphRevenue(); */
+const graphRevenue = await getGraphRevenue();
+ const totalRevenue = await getTotalRevenue();
+  const stockCount = await getStockCount(); 
+  const salesCount = await getSalesCount();
+
 
   return (
     <div className="flex-col">
@@ -28,10 +31,10 @@ const DashboardPage= async () => {
               <CardTitle className="text-sm font-medium">
                 Total Revenue
               </CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
+              <Euro className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-{/*               <div className="text-2xl font-bold">{formatter.format(totalRevenue)}</div> */}
+              <div className="text-2xl font-bold">{formatter.format(totalRevenue)}</div>
             </CardContent>
           </Card>
           <Card>
@@ -40,7 +43,7 @@ const DashboardPage= async () => {
               <CreditCard className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-{/*               <div className="text-2xl font-bold">+{salesCount}</div> */}
+              <div className="text-2xl font-bold">+{salesCount}</div>
             </CardContent>
           </Card>
           <Card>
@@ -49,7 +52,7 @@ const DashboardPage= async () => {
               <Package className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-{/*               <div className="text-2xl font-bold">{stockCount}</div> */}
+              <div className="text-2xl font-bold">{stockCount}</div>
             </CardContent>
           </Card>
         </div>
@@ -58,7 +61,7 @@ const DashboardPage= async () => {
             <CardTitle>Overview</CardTitle>
           </CardHeader>
           <CardContent className="pl-2">
-{/*             <Overview data={graphRevenue} /> */}
+            <Overview data={graphRevenue} />
           </CardContent>
         </Card>
       </div>

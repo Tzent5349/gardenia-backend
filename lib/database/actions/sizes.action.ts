@@ -2,7 +2,7 @@
 
 import { CreateSizeParams, UpdateSizeParams, DeleteSizeParams } from "@/types"
 import { handleError } from "@/lib/utils";
-import  connectToDatabase  from "@/lib/database";
+import  connectToDatabase  from "@/lib/database/connection";
 import Size from "@/lib/database/models/size.model";
 import { revalidatePath } from "next/cache";
 import { getGenderById } from "./genders.action";

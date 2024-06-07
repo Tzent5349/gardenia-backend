@@ -1,4 +1,4 @@
-import  connectToDatabase  from "@/lib/database";
+import  connectToDatabase  from "@/lib/database/connection";
 import { getSizeById } from "@/lib/database/actions/sizes.action";
 import { NextResponse } from "next/server";
 

@@ -1,6 +1,6 @@
 "use server"
 import { handleError } from "@/lib/utils"
-import  connectToDatabase  from "@/lib/database"
+import  connectToDatabase  from "@/lib/database/connection"
 import Review, { IReview } from "@/lib/database/models/review.model"
 import { revalidatePath } from "next/cache"
 import { createReviewParams } from "@/types"

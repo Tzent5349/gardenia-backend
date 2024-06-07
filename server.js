@@ -9,8 +9,8 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   createServer((req, res) => {
-    // Set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', 'https://192.168.1.126');
+    // Set CORS headers 'http://localhost:3001',"https://a20e-79-168-246-226.ngrok-free.app"
+    res.setHeader('Access-Control-Allow-Origin', '*' );
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 

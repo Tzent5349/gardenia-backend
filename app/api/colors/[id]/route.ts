@@ -1,4 +1,4 @@
-import connectToDatabase from "@/lib/database";
+import connectToDatabase from "@/lib/database/connection";
 import { getColorById } from "@/lib/database/actions/colors.action";
 import { NextResponse } from "next/server";
 
@@ -15,27 +15,12 @@ export async function GET(
 
     const color = await getColorById(params.id);
 
-    return new NextResponse(JSON.stringify(color), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        // Add other CORS headers as needed
-      },
-    });
+    return new NextResponse(JSON.stringify(color));
   } catch (error) {
     console.error("Error fetching color:", error);
 
     return new NextResponse(
       JSON.stringify({ error: "Internal server error" }),
-      {
-        status: 500,
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          // Add other CORS headers as needed
-        },
-      }
     );
   }
 }

@@ -2,7 +2,7 @@
 
 import { CreateCategoryParams, DeleteCategoryParams, UpdateCategoryParams, } from "@/types"
 import { handleError } from "@/lib/utils"
-import  connectToDatabase  from "@/lib/database"
+import  connectToDatabase  from "@/lib/database/connection"
 import Category from "@/lib/database/models/category.model"
 import { revalidatePath } from "next/cache"
 

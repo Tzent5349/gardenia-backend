@@ -1,4 +1,4 @@
-import  connectToDatabase  from "@/lib/database";
+import  connectToDatabase  from "@/lib/database/connection";
 import { getAllColor } from "@/lib/database/actions/colors.action";
 import { NextResponse } from "next/server";
 

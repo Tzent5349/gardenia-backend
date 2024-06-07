@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import  connectToDatabase  from "@/lib/database";
+import  connectToDatabase  from "@/lib/database/connection";
 import Review from '@/lib/database/models/review.model';
 
 export default async function getReviews(req: NextApiRequest, res: NextApiResponse) {

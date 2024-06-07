@@ -2,7 +2,7 @@
 
 import { CreateBrandParams, UpdateBrandParams, deleteBrandParams } from "@/types";
 import { handleError } from "@/lib/utils";
-import  connectToDatabase  from "@/lib/database";
+import  connectToDatabase  from "@/lib/database/connection";
 import Brand from "@/lib/database/models/brand.model";
 import { revalidatePath } from "next/cache";
 import { describe } from "node:test";
