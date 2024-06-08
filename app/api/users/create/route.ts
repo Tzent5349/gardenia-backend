@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createUser } from '@/lib/database/actions/users.action';
+import { withCors } from '@/lib/middleware/withCors';
 
-export async function POST(req: NextRequest) {
-  // Handle CORS Preflight Request
-  if (req.method === 'OPTIONS') {
-    return new NextResponse(null, { status: 204 });
-  }
-
+async function handler(req: NextRequest, res: NextResponse) {
   try {
     // Ensure the request is a POST request
     if (req.method !== 'POST') {
@@ -16,10 +12,8 @@ export async function POST(req: NextRequest) {
     // Parse the request body
     const body = await req.json();
 
-
     // Call the createUser function
     const newUser = await createUser(body);
-
 
     // Return a success response
     return NextResponse.json(newUser, { status: 201 });
@@ -30,7 +24,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// Export the OPTIONS method to handle CORS preflight
-export function OPTIONS() {
-  return new NextResponse(null, { status: 204 });
-}
+export const POST = withCors(handler);
+
+// Handle CORS preflight request
+export const OPTIONS = withCors(async () => new NextResponse(null, { status: 204 }));

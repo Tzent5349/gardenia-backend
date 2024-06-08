@@ -1,20 +1,33 @@
-// lib/middleware/cors.ts
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from "next/server";
 
-export function cors(req: NextApiRequest, res: NextApiResponse) {
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Allow-Origin', '*'); // or specify your frontend origin
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-    res.setHeader(
-        'Access-Control-Allow-Headers',
-        'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Authorization'
+const allowedOrigins = [
+  'http://localhost:3001',
+  'https://33fb-79-168-246-226.ngrok-free.app', // Ensure this is the HTTPS version
+  'https://chilly-seals-itch.loca.lt' // Use HTTPS for local network if applicable
+] ;
+
+export function cors(req: NextRequest, res: NextResponse) {
+  const origin = req.headers.get("origin");
+
+  if (allowedOrigins.includes(origin)) {
+    res.headers.set('Access-Control-Allow-Origin', origin);
+    res.headers.set('Access-Control-Allow-Credentials', 'true');
+    res.headers.set('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+    res.headers.set(
+      'Access-Control-Allow-Headers',
+      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Authorization'
     );
 
-    // If the request method is OPTIONS, respond with a 200 status code
+    // If the request method is OPTIONS, respond with a 204 status code
     if (req.method === 'OPTIONS') {
-        res.status(200).end();
-        return true;
+      res.status(204).end();
+      return true;
     }
+  } else {
+    res.headers.set('Access-Control-Allow-Origin', 'null');
+    res.status(403).json({ message: 'Origin not allowed' });
+    return true;
+  }
 
-    return false;
+  return false;
 }
